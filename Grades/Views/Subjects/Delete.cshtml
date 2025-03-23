@@ -1,0 +1,19 @@
+﻿@model Grades.Models.Subject
+
+@{
+    ViewBag.Title = "Eliminar Materia";
+}
+
+<h2>¿Estás seguro de que quieres eliminar esta materia?</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+
+    @using (Html.BeginForm("DeleteConfirmed", "Subjects", new { id = Model.Id }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+    }
+</div>
+
