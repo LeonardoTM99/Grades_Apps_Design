@@ -43,7 +43,7 @@ namespace Grades.Controllers
         public ActionResult Edit(int id)
         {
             var subject = subjects.FirstOrDefault(s => s.Id == id);
-            if (subject == null) return HttpNotFound();
+            if (subject == null) return NotFound();
             return View(subject);
         }
 
@@ -68,7 +68,7 @@ namespace Grades.Controllers
         public ActionResult Delete(int id)
         {
             var subject = subjects.FirstOrDefault(s => s.Id == id);
-            if (subject == null) return HttpNotFound();
+            if (subject == null) return NotFound();
             return View(subject);
         }
 
